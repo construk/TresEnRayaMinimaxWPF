@@ -39,7 +39,7 @@ El proyecto consta de:
 |--|--|
 |`int[,] Tablero`|Obtienes un array bidimensional que representa al tablero 3x3 de la partida.|
 |`int[] UltimaJugadaIA`|Obtienes un array que contiene:<br/> -Posición [0] -> fila<br/> -Posición [1] -> columna<br/>que es la posición del tablero donde la IA pone su ficha cuando se ejecuta el método público `PulsarBoton(int n, int m)`. |
-|`int GanadorPartida`|Obtienes los valores:<br/> -Sin ganador*=-1 <br/> -Gana jugador1=0<br/> -Gana jugador2=1. <br/><br/> ^****O la partida ha acabado en empate o todavía no exite todavía un ganador.***^|
+|`int GanadorPartida`|Obtienes los valores:<br/> -Sin ganador*=-1 <br/> -Gana jugador1=0<br/> -Gana jugador2=1. <br/><br/> <sup>****O la partida ha acabado en empate o todavía no exite todavía un ganador.***<sup/>|
 |`bool IsTableroCompleto`|Devuelve `true` en caso de que esté completo el tablero, es decir, que estén todas las fichas colocadas, `false` en caso contrario.|
 |`bool FinPartida`|Devuelve `true` en caso de que se haya acabado la partida, `false` en caso contrario.|
 
@@ -65,5 +65,5 @@ El proyecto consta de:
 ### Algoritmo Minimax
 En teoría de juegos, minimax es un método de decisión para minimizar la pérdida máxima esperada en juegos con adversario y con información perfecta. Minimax es un algoritmo recursivo.
 
-El funcionamiento de minimax puede resumirse en cómo elegir el mejor movimiento para ti mismo suponiendo que tu contrincante escogerá el peor para ti. <br/>^Fuente: ([Wikipedia](https://es.wikipedia.org/wiki/Minimax))^
+El funcionamiento de minimax puede resumirse en cómo elegir el mejor movimiento para ti mismo suponiendo que tu contrincante escogerá el peor para ti. <br/><sup>Fuente: ([Wikipedia](https://es.wikipedia.org/wiki/Minimax))<sup/>*
 
