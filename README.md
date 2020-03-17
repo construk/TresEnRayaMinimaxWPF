@@ -18,7 +18,7 @@ Los jugadores no tardan en descubrir que el juego perfecto termina en empate sin
 ## Resumen
 El proyecto consta de:
 * Por un lado, la clase **`TresEnRaya.cs`** se encarga de controlar toda la lógica del juego. 
-* Por otro lado, está la parte más gráfica y de lógica de eventos:
+* Por otro lado, está la parte gráfica y la parte de lógica de eventos:
   *  Fichero XAML **`TresEnRayaWPF.xaml`**: Es la interfaz de la aplicación.
   *  Clase **`TresEnRayaWPF.xaml.cs`** es la que se encarga de conectar la lógica del juego con la interfaz gráfica mediante eventos.
 
@@ -28,7 +28,7 @@ El proyecto consta de:
 
 #### **Constructor**
 |Firma|Descripción|
-|==|==|
+|--|--|
 |TresEnRaya()|Se inicializan las autopropiedades `Tablero` y `UltimaJugadaIA`|
 
 <br/>
@@ -36,7 +36,7 @@ El proyecto consta de:
 #### **Propiedades**
 
 |Firma|Descripción|
-|==|==|
+|--|--|
 |`int[,] Tablero`|Obtienes un array bidimensional que representa al tablero 3x3 de la partida.|
 |`int[] UltimaJugadaIA`|Obtienes un array que contiene:<br/> -Posición [0] -> fila<br/> -Posición [1] -> columna<br/>que es la posición del tablero donde la IA pone su ficha cuando se ejecuta el método público `PulsarBoton(int n, int m)`. |
 |`int GanadorPartida`|Obtienes los valores:<br/> -Sin ganador*=-1 <br/> -Gana jugador1=0<br/> -Gana jugador2=1. <br/><br/> ^****O la partida ha acabado en empate o todavía no exite todavía un ganador.***^|
@@ -45,8 +45,25 @@ El proyecto consta de:
 
 <br/>
 
-#### **Métodos**
+#### **Métodos públicos**
 
 |Firma|Descripción|
-|==|==|
-|`void EmpezarPartida()`||
+|--|--|
+|`void PulsarBoton(int n, int m)`|Método que permite pulsar un botón para partidas contra la IA.|
+|`void PulsarBoton(int n, int m, bool jugador)`|Método que permite pulsar un botón para partidas sin IA, es decir, contra otra persona (en local).|
+
+#### **Métodos privados**
+
+|Firma|Descripción|
+|--|--|
+|`void PonerFichaOrdenador()`|Método que comienza el algoritmo Minimax, se encarga de recoger la posición dónde coloca la ficha la IA.|
+|`int Max()`|Esta función se encarga de maximizar el beneficio de la maquina ante el jugador. Se queda con la partida que más beneficio le aporte a la máquina.|
+|`int Min()`|Esta función se encarga de minimizar el beneficio del jugador ante la máquina. Se queda con la partida que menos beneficio le aporte al jugador.|
+
+-----------------------------------------------------------------------------------
+
+### Algoritmo Minimax
+En teoría de juegos, minimax es un método de decisión para minimizar la pérdida máxima esperada en juegos con adversario y con información perfecta. Minimax es un algoritmo recursivo.
+
+El funcionamiento de minimax puede resumirse en cómo elegir el mejor movimiento para ti mismo suponiendo que tu contrincante escogerá el peor para ti. <br/>^Fuente: ([Wikipedia](https://es.wikipedia.org/wiki/Minimax))^
+
