@@ -7,6 +7,8 @@ Los jugadores no tardan en descubrir que el juego perfecto termina en empate sin
 
 --------------------------------------------------------------------------------
 
+<br/>
+
 ### Características
 * Juego realizado en WPF y C#
 * Framework: .Net Framework 4.5
@@ -14,6 +16,8 @@ Los jugadores no tardan en descubrir que el juego perfecto termina en empate sin
 *Facilmente se puede compilar en .Net Core (para ejecutarlo en Linux).
 
 --------------------------------------------------------------------------------
+
+<br/>
 
 ## Resumen
 El proyecto consta de:
@@ -24,12 +28,14 @@ El proyecto consta de:
 
 --------------------------------------------------------------------------------
 
+<br/>
+
 ## `TresEnRaya.cs`
 
 #### **Constructor**
 |Firma|Descripción|
 |--|--|
-|TresEnRaya()|Se inicializan las autopropiedades `Tablero` y `UltimaJugadaIA`|
+|`TresEnRaya()`|Se inicializan las autopropiedades `Tablero` y `UltimaJugadaIA`|
 
 <br/>
 
@@ -52,6 +58,8 @@ El proyecto consta de:
 |`void PulsarBoton(int n, int m)`|Método que permite pulsar un botón para partidas contra la IA.|
 |`void PulsarBoton(int n, int m, bool jugador)`|Método que permite pulsar un botón para partidas sin IA, es decir, contra otra persona (en local).|
 
+<br/>
+
 #### **Métodos privados**
 
 |Firma|Descripción|
@@ -60,9 +68,13 @@ El proyecto consta de:
 |`int Max()`|Esta función se encarga de maximizar el beneficio de la maquina ante el jugador. Se queda con la partida que más beneficio le aporte a la máquina.|
 |`int Min()`|Esta función se encarga de minimizar el beneficio del jugador ante la máquina. Se queda con la partida que menos beneficio le aporte al jugador.|
 
+<br/>
+
 -----------------------------------------------------------------------------------
 
-### Algoritmo Minimax
+<br/>
+
+## Algoritmo Minimax
 En teoría de juegos, minimax es un método de decisión para minimizar la pérdida máxima esperada en juegos con adversario y con información perfecta. Minimax es un algoritmo recursivo.
 
 El funcionamiento de minimax puede resumirse en cómo elegir el mejor movimiento para ti mismo suponiendo que tu contrincante escogerá el peor para ti. <br/><sup>Fuente: ([Wikipedia](https://es.wikipedia.org/wiki/Minimax))<sup/>*
@@ -84,10 +96,10 @@ La IA comenzará su movimiento desde el método `Max()` donde:
 Es llamado desde `Max`, y realiza lo mismo que `Max` pero en un sentido contrario, es decir, mientras que en Max se almacena el valor de la jugada anterior si es mayor, en `Min`se comprueba que el valor de la jugada es menor, y si es así se almacena.
 También en este método se coloca la ficha del jugador como "simulación" que luego se quita.
 
-**Posición de decisión**
+##### **Posición de decisión**
 * `Max` representa la posición de decisión de la IA.
 * `Min` representa la posición de decisión del jugador.
 
-**Objetivo**
+##### **Objetivo**
 * En `Max` se pretende obtener la elección que más beneficie a la IA.
 * En `Min` se pretende obtener la elección que menos perjudique a la IA.
