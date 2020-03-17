@@ -68,3 +68,26 @@ En teoría de juegos, minimax es un método de decisión para minimizar la pérdida 
 El funcionamiento de minimax puede resumirse en cómo elegir el mejor movimiento para ti mismo suponiendo que tu contrincante escogerá el peor para ti. <br/><sup>Fuente: ([Wikipedia](https://es.wikipedia.org/wiki/Minimax))<sup/>*
 
 ![Imagen funcionamiento juego vida](https://raw.githubusercontent.com/construk/TresEnRayaMinimaxWPF/master/Minimax3enraya.png)
+
+<br/>
+
+#### **Comprobación recursiva:** 
+##### **Max:** 
+La IA comenzará su movimiento desde el método `Max()` donde:
+1. Comprobará si es el fin del cálculo recursivo. Si lo es, devuelve el valor que le corresponde.
+2. Si no lo es, realizará la comprobación recursiva donde deberá de ir comprobando todas las posibilidades posibles y quedarse con la opción más optima.
+   * Recorrer todas las casillas.
+   * Si la casilla está libre, simular que se coloca la ficha en ella, realizar llamada al método `Min()` y luego de recibir el valor del método `Min()` volver a quitar la casilla que se ha simulado.
+   * El valor que se obtiene de `Min()` se almacena, y si es mayor que en la jugada anterior (como jugada más beneficiosa) también se almacena en `UltimaJugadaIA` la posición en el tablero donde coloca la ficha la IA.
+
+##### **Min:** 
+Es llamado desde `Max`, y realiza lo mismo que `Max` pero en un sentido contrario, es decir, mientras que en Max se almacena el valor de la jugada anterior si es mayor, en `Min`se comprueba que el valor de la jugada es menor, y si es así se almacena.
+También en este método se coloca la ficha del jugador como "simulación" que luego se quita.
+
+**Posición de decisión**
+* `Max` representa la posición de decisión de la IA.
+* `Min` representa la posición de decisión del jugador.
+
+**Objetivo**
+* En `Max` se pretende obtener la elección que más beneficie a la IA.
+* En `Min` se pretende obtener la elección que menos perjudique a la IA.
