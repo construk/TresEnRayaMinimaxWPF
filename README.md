@@ -67,3 +67,4 @@ En teoría de juegos, minimax es un método de decisión para minimizar la pérdida 
 
 El funcionamiento de minimax puede resumirse en cómo elegir el mejor movimiento para ti mismo suponiendo que tu contrincante escogerá el peor para ti. <br/><sup>Fuente: ([Wikipedia](https://es.wikipedia.org/wiki/Minimax))<sup/>*
 
+![Imagen funcionamiento juego vida](https://raw.githubusercontent.com/construk/TresEnRayaMinimaxWPF/master/Minimax3enraya.png)
